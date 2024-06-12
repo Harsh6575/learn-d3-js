@@ -1,0 +1,8 @@
+// 1. Reading dataset
+
+const data = await d3.csv("datasets/food.csv", (data) => {
+    return {
+        food: data.Food,
+        deliciousness: parseFloat(data.Deliciousness),
+    };
+});

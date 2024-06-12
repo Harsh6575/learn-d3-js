@@ -2,32 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.bar {
+  display: inline-block;
+  width: 20px;
+  height: 75px; /* We'll override height later */
+  background-color: teal;
+  margin-right: 2px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.axis path,
+.axis line {
+  stroke: teal;
+  shape-rendering: crispEdges;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.axis text {
+  font-family: Optima, Futura, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  fill: teal;
 }
